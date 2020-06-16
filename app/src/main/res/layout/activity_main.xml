@@ -32,13 +32,19 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/clear"/>
+            android:text="@string/clear"
+            android:background="@drawable/cusstom_button_c"
+            android:layout_marginHorizontal="7dp"
+            android:layout_marginVertical="2dp"
+            android:textColor="@android:color/white"/>
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:background="@color/background_button"
-            android:layout_weight="3"/>
+            android:layout_weight="3"
+            android:layout_marginHorizontal="21dp"
+            android:layout_marginVertical="2dp"/>
 
     </LinearLayout>
 
@@ -56,25 +62,41 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/seven"/>
+                android:text="@string/seven"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/eight"/>
+                android:text="@string/eight"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/nine"/>
+                android:text="@string/nine"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/division_symbol"/>
+                android:text="@string/division_symbol"
+                android:background="@drawable/custom_button_operations"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -93,61 +115,41 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/four"/>
+                android:text="@string/four"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/five"/>
+                android:text="@string/five"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/six"/>
+                android:text="@string/six"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/multiplication_symbol"/>
-
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        android:background="@color/background_button">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/one"/>
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/two"/>
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/three"/>
-
-            <Button
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/subtraction_symbol"/>
+                android:text="@string/multiplication_symbol"
+                android:background="@drawable/custom_button_operations"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -165,25 +167,93 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/zero"/>
+                android:text="@string/one"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/comma"/>
+                android:text="@string/two"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/equal_symbol"/>
+                android:text="@string/three"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/plus_symbol"/>
+                android:text="@string/subtraction_symbol"
+                android:background="@drawable/custom_button_operations"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:background="@color/background_button">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/comma"
+                android:background="@drawable/custom_button_number"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equal_symbol"
+                android:background="@drawable/custom_button_operations"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/plus_symbol"
+                android:background="@drawable/custom_button_operations"
+                android:layout_marginHorizontal="7dp"
+                android:layout_marginVertical="2dp"
+                android:textColor="@android:color/white"/>
 
         </LinearLayout>
     </LinearLayout>
