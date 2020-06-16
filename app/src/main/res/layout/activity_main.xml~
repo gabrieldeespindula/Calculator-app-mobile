@@ -16,10 +16,14 @@
         android:background="@color/background_text">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="5521+2516"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:textSize="45sp"
+            android:layout_gravity="end"
+            android:gravity="center_vertical"/>
+        
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -124,7 +128,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -134,7 +139,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -144,7 +150,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -154,7 +161,8 @@
                 android:background="@drawable/custom_button_operations"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -176,7 +184,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -186,7 +195,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -196,7 +206,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -206,7 +217,8 @@
                 android:background="@drawable/custom_button_operations"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
         </LinearLayout>
     </LinearLayout>
@@ -228,7 +240,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -238,7 +251,8 @@
                 android:background="@drawable/custom_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -248,7 +262,8 @@
                 android:background="@drawable/custom_button_operations"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white" />
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
             <Button
                 android:layout_width="0dp"
@@ -258,7 +273,8 @@
                 android:background="@drawable/custom_button_operations"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
-                android:textColor="@android:color/white"/>
+                android:textColor="@android:color/white"
+                android:textSize="20sp"/>
 
         </LinearLayout>
     </LinearLayout>
