@@ -27,10 +27,18 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@color/background_button">
+
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:text="@string/clear"/>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="@color/background_button"
+            android:layout_weight="3"/>
 
     </LinearLayout>
 
