@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
-    <item
-        android:id="@+id/action_refresh"
-        android:checkable="true"
-        android:checked="true"
-        android:enabled="true"
-        android:title="Continuous"
-        android:visible="true" />
+    <group>
+        <item
+            android:id="@+id/checkable_continuous"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:title="Continuous"
+            android:visible="true" />
+        <item
+            android:id="@+id/checkable_single"
+            android:checkable="true"
+            android:checked="true"
+            android:enabled="true"
+            android:title="Single"
+            android:visible="true"/>
+    </group>
 </menu>
