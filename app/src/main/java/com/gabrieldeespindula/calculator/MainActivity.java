@@ -16,17 +16,13 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_refresh:
-                if (item.isChecked()){
-                    item.setChecked(false);
-                }
-                else {
-                    item.setChecked(true);
-                }
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
+        if (item.isChecked()){
+            item.setChecked(false);
+            return true;
+        }
+        else {
+            item.setChecked(true);
+            return true;
         }
     }
 
