@@ -16,6 +16,7 @@
         android:layoutDirection="rtl">
 
         <TextView
+            android:id="@+id/jose"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text=""
