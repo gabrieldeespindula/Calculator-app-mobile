@@ -8,22 +8,22 @@
     tools:context=".MainActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:orientation="vertical"
-        android:background="@color/background_text">
+        android:background="@color/background_text"
+        android:layoutDirection="rtl">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="5521+2516"
+            android:text=""
             android:textColor="@android:color/white"
             android:textSize="45sp"
-            android:layout_gravity="end"
-            android:gravity="center_vertical"/>
-    </LinearLayout>
+            android:gravity="center_vertical"
+            android:paddingRight="30dp"/>
+    </HorizontalScrollView>
     <View
         android:layout_width="match_parent"
         android:layout_height="0.1dp"
