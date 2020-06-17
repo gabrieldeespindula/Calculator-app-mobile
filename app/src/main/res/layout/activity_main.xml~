@@ -16,9 +16,10 @@
         android:layoutDirection="rtl">
 
         <TextView
+            android:id="@+id/jose"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="5521+2516"
+            android:text=""
             android:textColor="@android:color/white"
             android:textSize="45sp"
             android:gravity="center_vertical"
