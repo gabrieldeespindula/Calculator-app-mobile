@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Boolean continuous = false;
     Boolean single = true;
     String expression = "";
-    Boolean lastButtonWasASignal = false;
+    Boolean lastButtonWasASignal = true;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -104,30 +104,46 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }if (continuous && !single){
             if (v.getId()==R.id.button_clear){
                 expression = "";
+                lastButtonWasASignal = true;
             } if (v.getId()==R.id.button_zero){
                 expression = expression + "0";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_one){
                 expression = expression + "1";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_two){
                 expression = expression + "2";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_three){
                 expression = expression + "3";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_four){
                 expression = expression + "4";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_five){
                 expression = expression + "5";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_six){
                 expression = expression + "6";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_seven){
                 expression = expression + "7";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_eight){
                 expression = expression + "8";
+                lastButtonWasASignal = false;
             } if (v.getId()==R.id.button_nine){
                 expression = expression + "9";
+                lastButtonWasASignal = false;
+            } if (v.getId()==R.id.button_division){
+                if (!lastButtonWasASignal){
+                    expression = expression + "÷";
+                    textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
+                    lastButtonWasASignal = true;
+                }
             }
             textNumber.setText(expression);
             scroll.fullScroll(View.FOCUS_RIGHT);
-
         }
     }
 }
