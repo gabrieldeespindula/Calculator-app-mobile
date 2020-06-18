@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 expression = expression + "9";
             }
             textNumber.setText(expression);
+            scroll.fullScroll(View.FOCUS_RIGHT);
 
         }
     }
