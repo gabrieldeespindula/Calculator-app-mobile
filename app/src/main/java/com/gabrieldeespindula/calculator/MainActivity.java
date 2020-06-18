@@ -138,10 +138,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             } if (v.getId()==R.id.button_division){
                 if (!lastButtonWasASignal){
                     expression = expression + "÷";
-                    textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
+                    lastButtonWasASignal = true;
+                }
+            } if (v.getId()==R.id.button_multiplication){
+                if (!lastButtonWasASignal){
+                    expression = expression + "×";
                     lastButtonWasASignal = true;
                 }
             }
+            textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
             textNumber.setText(expression);
             scroll.fullScroll(View.FOCUS_RIGHT);
         }
