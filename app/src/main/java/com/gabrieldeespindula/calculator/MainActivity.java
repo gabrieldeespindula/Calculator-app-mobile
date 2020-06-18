@@ -105,6 +105,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 expression = "";
             } if (v.getId()==R.id.button_zero){
                 expression = expression + "0";
+            } if (v.getId()==R.id.button_one){
+                expression = expression + "1";
+            } if (v.getId()==R.id.button_two){
+                expression = expression + "2";
+            } if (v.getId()==R.id.button_three){
+                expression = expression + "3";
+            } if (v.getId()==R.id.button_four){
+                expression = expression + "4";
+            } if (v.getId()==R.id.button_five){
+                expression = expression + "5";
+            } if (v.getId()==R.id.button_six){
+                expression = expression + "6";
+            } if (v.getId()==R.id.button_seven){
+                expression = expression + "7";
+            } if (v.getId()==R.id.button_eight){
+                expression = expression + "8";
+            } if (v.getId()==R.id.button_nine){
+                expression = expression + "9";
             }
             textNumber.setText(expression);
 
