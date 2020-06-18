@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     HorizontalScrollView scroll;
     TextView textNumber;
 
@@ -54,6 +55,11 @@ public class MainActivity extends AppCompatActivity {
         Button seven = findViewById(R.id.button_seven);
         Button eight = findViewById(R.id.button_eight);
         Button nine = findViewById(R.id.button_nine);
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
