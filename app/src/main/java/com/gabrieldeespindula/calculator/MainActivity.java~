@@ -145,16 +145,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     expression = expression + "×";
                     lastButtonWasASignal = true;
                 }
-            } if (v.getId()==R.id.button_minus){
-                if (!lastButtonWasASignal){
-                    expression = expression + "-";
-                    lastButtonWasASignal = true;
-                }
-            } if (v.getId()==R.id.button_plus){
-                if (!lastButtonWasASignal){
-                    expression = expression + "+";
-                    lastButtonWasASignal = true;
-                }
             }
             textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
             textNumber.setText(expression);
