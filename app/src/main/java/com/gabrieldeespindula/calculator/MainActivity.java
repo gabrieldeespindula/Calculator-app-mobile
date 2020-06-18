@@ -56,6 +56,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button eight = findViewById(R.id.button_eight);
         Button nine = findViewById(R.id.button_nine);
 
+        clear.setOnClickListener(this);
+        division.setOnClickListener(this);
+        multiplication.setOnClickListener(this);
+        minus.setOnClickListener(this);
+        plus.setOnClickListener(this);
+        equals.setOnClickListener(this);
+        comma.setOnClickListener(this);
+        zero.setOnClickListener(this);
+        one.setOnClickListener(this);
+        two.setOnClickListener(this);
+        three.setOnClickListener(this);
+        four.setOnClickListener(this);
+        five.setOnClickListener(this);
+        six.setOnClickListener(this);
+        seven.setOnClickListener(this);
+        eight.setOnClickListener(this);
+        nine.setOnClickListener(this);
     }
 
     @Override
