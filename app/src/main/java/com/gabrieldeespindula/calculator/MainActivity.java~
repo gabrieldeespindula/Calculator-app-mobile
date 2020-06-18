@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView textNumber;
     Boolean continuous = false;
     Boolean single = true;
-    String expression = "";
+    String expre
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
