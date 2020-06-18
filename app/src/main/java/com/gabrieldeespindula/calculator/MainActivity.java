@@ -101,6 +101,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }if (!continuous && !single) {
             Toast.makeText(this, "Please verify one of the menu options.", Toast.LENGTH_SHORT).show();
         }if (continuous && !single){
+            if (v.getId()==R.id.button_clear){
+                expression = "";
+                textNumber.setText(expression);
+            }
 
         }
     }
