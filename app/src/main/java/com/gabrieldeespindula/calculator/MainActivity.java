@@ -15,9 +15,12 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     HorizontalScrollView scroll;
     TextView textNumber;
+    // continuous and single is used to know if menu checkable is checked or not.
     Boolean continuous = false;
     Boolean single = true;
+    // expression is what will appear on the screen.
     String expression = "";
+    // lastButtonWasASignal is used to not repeat the button or start the account with a sign.
     Boolean lastButtonWasASignal = true;
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        // verifying if continuous is checked.
         if (item.getItemId()==R.id.checkable_continuous) {
             if (item.isChecked()) {
                 item.setChecked(false);
@@ -38,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             }
         }
+        // verifying if single is checked.
         if (item.getItemId()==R.id.checkable_single) {
             if (item.isChecked()) {
                 item.setChecked(false);
@@ -56,6 +61,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // mapping interface elements
         scroll = findViewById(R.id.scroll);
         textNumber = findViewById(R.id.text_numbers);
         Button clear = findViewById(R.id.button_clear);
@@ -76,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button eight = findViewById(R.id.button_eight);
         Button nine = findViewById(R.id.button_nine);
 
+        // getting the button click.
         clear.setOnClickListener(this);
         division.setOnClickListener(this);
         multiplication.setOnClickListener(this);
@@ -97,67 +105,105 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
+        // function so that if the user presses a button with the two menu checkable selected, a Toast appears.
         if (continuous && single){
             Toast.makeText(this, "Please, verify only one menu options.", Toast.LENGTH_SHORT).show();
-        }if (!continuous && !single) {
+        }
+        // function so that if the user presses a button with no menu checkable selected, a Toast appears.
+        if (!continuous && !single) {
             Toast.makeText(this, "Please verify one of the menu options.", Toast.LENGTH_SHORT).show();
-        }if (continuous && !single){
+        }
+        // function that indicates the behavior of the buttons if the continuous mode is checked.
+        if (continuous && !single){
+            // C button action.
             if (v.getId()==R.id.button_clear){
                 expression = "";
                 lastButtonWasASignal = true;
-            } if (v.getId()==R.id.button_zero){
+            }
+            // 0 button action.
+            if (v.getId()==R.id.button_zero){
                 expression = expression + "0";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_one){
+            }
+            // 1 button action.
+            if (v.getId()==R.id.button_one){
                 expression = expression + "1";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_two){
+            }
+            // 2 button action.
+            if (v.getId()==R.id.button_two){
                 expression = expression + "2";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_three){
+            }
+            // 3 button action.
+            if (v.getId()==R.id.button_three){
                 expression = expression + "3";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_four){
+            }
+            // 4 button action.
+            if (v.getId()==R.id.button_four){
                 expression = expression + "4";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_five){
+            }
+            // 5 button action.
+            if (v.getId()==R.id.button_five){
                 expression = expression + "5";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_six){
+            }
+            // 6 button action.
+            if (v.getId()==R.id.button_six){
                 expression = expression + "6";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_seven){
+            }
+            // 7 button action.
+            if (v.getId()==R.id.button_seven){
                 expression = expression + "7";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_eight){
+            }
+            // 8 button action.
+            if (v.getId()==R.id.button_eight){
                 expression = expression + "8";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_nine){
+            }
+            // 9 button action.
+            if (v.getId()==R.id.button_nine){
                 expression = expression + "9";
                 lastButtonWasASignal = false;
-            } if (v.getId()==R.id.button_division){
+            }
+            // Division button action.
+            if (v.getId()==R.id.button_division){
+                // verifying if last button was a signal to not repeat.
                 if (!lastButtonWasASignal){
                     expression = expression + "÷";
                     lastButtonWasASignal = true;
                 }
-            } if (v.getId()==R.id.button_multiplication){
+            }
+            // Multiplication button action.
+            if (v.getId()==R.id.button_multiplication){
                 if (!lastButtonWasASignal){
                     expression = expression + "×";
                     lastButtonWasASignal = true;
                 }
-            } if (v.getId()==R.id.button_minus){
+            }
+            // Minus button action.
+            if (v.getId()==R.id.button_minus){
                 if (!lastButtonWasASignal){
                     expression = expression + "-";
                     lastButtonWasASignal = true;
                 }
-            } if (v.getId()==R.id.button_plus){
+            }
+            // Plus button action.
+            if (v.getId()==R.id.button_plus){
                 if (!lastButtonWasASignal){
                     expression = expression + "+";
                     lastButtonWasASignal = true;
                 }
             }
+            // setTextDirection is here because operations signal for some reason change text direction.
             textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
             textNumber.setText(expression);
+            // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
+            // changed and not to stand still.
             scroll.fullScroll(View.FOCUS_RIGHT);
         }
     }
