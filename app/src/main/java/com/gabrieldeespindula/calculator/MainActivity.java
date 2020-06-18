@@ -103,8 +103,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }if (continuous && !single){
             if (v.getId()==R.id.button_clear){
                 expression = "";
-                textNumber.setText(expression);
+            } if (v.getId()==R.id.button_zero){
+                expression = expression + "0";
             }
+            textNumber.setText(expression);
 
         }
     }
