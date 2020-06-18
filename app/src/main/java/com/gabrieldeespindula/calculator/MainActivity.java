@@ -9,11 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     HorizontalScrollView scroll;
     TextView textNumber;
+    Boolean continuous = false;
+    Boolean single = true;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -22,14 +25,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.isChecked()){
-            item.setChecked(false);
-            return true;
+        if (item.getItemId()==R.id.checkable_continuous) {
+            if (item.isChecked()) {
+                item.setChecked(false);
+                continuous = false;
+                return true;
+            } else {
+                item.setChecked(true);
+                continuous = true;
+                return true;
+            }
         }
-        else {
-            item.setChecked(true);
-            return true;
+        if (item.getItemId()==R.id.checkable_single) {
+            if (item.isChecked()) {
+                item.setChecked(false);
+                single = false;
+                return true;
+            } else {
+                item.setChecked(true);
+                single = true;
+                return true;
+            }
         }
+        return true;
     }
 
     @Override
@@ -77,6 +95,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-
+        if (continuous && single){
+            Toast.makeText(this, "Please, verify only one menu options.", Toast.LENGTH_SHORT).show();
+        }if (!continuous && !single) {
+            Toast.makeText(this, "Please verify one of the menu options.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
