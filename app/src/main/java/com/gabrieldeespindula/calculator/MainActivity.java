@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Boolean continuous = false;
     Boolean single = true;
     String expression = "";
+    Boolean lastButtonWasASignal = false;
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
