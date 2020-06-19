@@ -276,6 +276,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     canComma = 0;
                 }
             }
+            // Comma button action
             if (v.getId()==R.id.button_comma){
                 if (canComma==1){
                     expression = expression + ",";
@@ -288,6 +289,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
             // changed and not to stand still.
             scroll.fullScroll(View.FOCUS_RIGHT);
+            // Equals button actions.
+            if (v.getId()==R.id.button_equals){
+                if (canComma==3){
+                    expression = expression + "0";
+                }
+                if (lastButtonWasASignal){
+                    Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
+                }
+                if (!lastButtonWasASignal){
+                    lastButtonWasASignal = true;
+                    canComma = 0;
+                }
+            }
         }
     }
 }
