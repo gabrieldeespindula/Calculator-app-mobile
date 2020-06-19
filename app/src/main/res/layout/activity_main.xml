@@ -75,7 +75,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="@string/seven"
-                android:background="@drawable/custom_button_number"
+                android:background="@drawable/selector_button_number"
                 android:layout_marginHorizontal="7dp"
                 android:layout_marginVertical="2dp"
                 android:textColor="@android:color/white"

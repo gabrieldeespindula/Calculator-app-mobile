@@ -8,4 +8,5 @@
     <color name="background_button_number">#343434</color>
     <color name="background_button_operations">#EB9C3C</color>
     <color name="background_button_c">#A5A5A5</color>
+    <color name="background_button_number_click">#9C9C9C</color>
 </resources>
