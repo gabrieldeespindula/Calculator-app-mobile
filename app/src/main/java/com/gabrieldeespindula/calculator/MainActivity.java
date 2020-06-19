@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // canComa = 3 means that the comma has already been used and is the last character;
     // canComa = 4 means that the comma has already been used and has other characters after it;
     int canComma = 0;
+    // result is what will be used to make the operations.
+    String result = "";
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

@@ -10,9 +10,8 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-//
+// You can find this import here: https://github.com/uklimaschewski/EvalEx
 import com.udojava.evalex.*;
-
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
