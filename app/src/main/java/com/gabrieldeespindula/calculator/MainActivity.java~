@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+//
+import com.udojava.evalex.*;
+
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -26,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // canComa = 0 means it cannot have a comma because there is no number in front;
     // canComa = 1 means that there is a number and a comma can be added;
     // canComa = 3 means that the comma has already been used and is the last character;
-    // canComa = 4 
+    // canComa = 4 means that the comma has already been used and has other characters after it;
     int canComma = 0;
 
     public boolean onCreateOptionsMenu(Menu menu) {
