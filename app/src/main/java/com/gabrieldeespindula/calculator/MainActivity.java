@@ -13,6 +13,8 @@ import android.widget.Toast;
 // You can find this import here: https://github.com/uklimaschewski/EvalEx
 import com.udojava.evalex.*;
 
+import java.math.BigDecimal;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     HorizontalScrollView scroll;
@@ -223,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             // 9 button action.
             if (v.getId()==R.id.button_nine){
+                result = result + "9";
                 expression = expression + "9";
                 lastButtonWasASignal = false;
                 if (canComma==0){
@@ -274,6 +277,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     expression = expression + "+";
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    result = result + "+";
                 }
             }
             // Comma button action
@@ -283,12 +287,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     canComma = 3;
                 }
             }
-            // setTextDirection is here because operations signal for some reason change text direction.
-            textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
-            textNumber.setText(expression);
-            // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
-            // changed and not to stand still.
-            scroll.fullScroll(View.FOCUS_RIGHT);
             // Equals button actions.
             if (v.getId()==R.id.button_equals){
                 if (canComma==3){
@@ -300,8 +298,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (!lastButtonWasASignal){
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    Expression resultBig = new Expression(result);
+                    result = resultBig.eval().toString();
+                    expression = result;
                 }
             }
+            // setTextDirection is here because operations signal for some reason change text direction.
+            textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
+            textNumber.setText(expression);
+            // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
+            // changed and not to stand still.
+            scroll.fullScroll(View.FOCUS_RIGHT);
         }
     }
 }
