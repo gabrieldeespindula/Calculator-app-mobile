@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
+// You can find this import here: https://github.com/uklimaschewski/EvalEx
+import com.udojava.evalex.*;
+
+import java.math.BigDecimal;
 
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -28,6 +32,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     // canComa = 3 means that the comma has already been used and is the last character;
     // canComa = 4 means that the comma has already been used and has other characters after it;
     int canComma = 0;
+    // result is what will be used to make the operations.
+    String result = "";
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -126,10 +132,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 expression = "";
                 lastButtonWasASignal = true;
                 canComma = 0;
+                result = "";
             }
             // 0 button action.
             if (v.getId()==R.id.button_zero){
                 expression = expression + "0";
+                result = result + "0";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -140,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 1 button action.
             if (v.getId()==R.id.button_one){
                 expression = expression + "1";
+                result = result + "1";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -150,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 2 button action.
             if (v.getId()==R.id.button_two){
                 expression = expression + "2";
+                result = result + "2";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -160,6 +170,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 3 button action.
             if (v.getId()==R.id.button_three){
                 expression = expression + "3";
+                result = result + "3";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -170,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 4 button action.
             if (v.getId()==R.id.button_four){
                 expression = expression + "4";
+                result = result + "4";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -180,6 +192,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 5 button action.
             if (v.getId()==R.id.button_five){
                 expression = expression + "5";
+                result = result + "5";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -190,6 +203,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 6 button action.
             if (v.getId()==R.id.button_six){
                 expression = expression + "6";
+                result = result + "6";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -200,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 7 button action.
             if (v.getId()==R.id.button_seven){
                 expression = expression + "7";
+                result = result + "7";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -210,6 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 8 button action.
             if (v.getId()==R.id.button_eight){
                 expression = expression + "8";
+                result = result + "8";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -220,6 +236,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // 9 button action.
             if (v.getId()==R.id.button_nine){
                 expression = expression + "9";
+                result = result + "9";
                 lastButtonWasASignal = false;
                 if (canComma==0){
                     canComma = 1;
@@ -232,50 +249,76 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // verifying if last button was a signal to not repeat.
                 if (canComma==3){
                     expression = expression + "0";
+                    result = result + "0";
                 }
                 if (!lastButtonWasASignal){
                     expression = expression + "÷";
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    result = result + "/";
                 }
             }
             // Multiplication button action.
             if (v.getId()==R.id.button_multiplication){
                 if (canComma==3){
                     expression = expression + "0";
+                    result = result + "0";
                 }
                 if (!lastButtonWasASignal){
                     expression = expression + "×";
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    result = result + "*";
                 }
             }
             // Minus button action.
             if (v.getId()==R.id.button_minus){
                 if (canComma==3){
                     expression = expression + "0";
+                    result = result + "0";
                 }
                 if (!lastButtonWasASignal){
                     expression = expression + "-";
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    result = result + "-";
                 }
             }
             // Plus button action.
             if (v.getId()==R.id.button_plus){
                 if (canComma==3){
                     expression = expression + "0";
+                    result = result + "0";
                 }
                 if (!lastButtonWasASignal){
                     expression = expression + "+";
                     lastButtonWasASignal = true;
                     canComma = 0;
+                    result = result + "+";
                 }
             }
+            // Comma button action
             if (v.getId()==R.id.button_comma){
                 if (canComma==1){
                     expression = expression + ",";
+                    result = result + ".";
                     canComma = 3;
+                }
+            }
+            // Equals button actions.
+            if (v.getId()==R.id.button_equals){
+                if (canComma==3){
+                    expression = expression + "0";
+                }
+                if (lastButtonWasASignal){
+                    Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
+                }
+                if (!lastButtonWasASignal){
+                    lastButtonWasASignal = true;
+                    canComma = 0;
+                    Expression resultBig = new Expression(result);
+                    result = resultBig.eval().toString();
+                    expression = result;
                 }
             }
             // setTextDirection is here because operations signal for some reason change text direction.
