@@ -43,7 +43,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="@string/clear"
-            android:background="@drawable/cusstom_button_c"
+            android:background="@drawable/selector_button_c"
             android:layout_marginHorizontal="7dp"
             android:layout_marginVertical="2dp"
             android:textColor="@android:color/white"
