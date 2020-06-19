@@ -10,4 +10,5 @@
     <color name="background_button_c">#A5A5A5</color>
     <color name="background_button_number_click">#9C9C9C</color>
     <color name="background_button_c_click">#D8D8D8</color>
+    <color name="background_button_operations_click">#E6BC88</color>
 </resources>
