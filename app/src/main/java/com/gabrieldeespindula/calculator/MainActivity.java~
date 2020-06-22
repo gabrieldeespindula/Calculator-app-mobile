@@ -233,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             scroll.fullScroll(View.FOCUS_RIGHT);
         }
     }
-    // function to add number in expression and result.
     public void ContinuousNumber(String number){
         expression = expression + number;
         result = result + number;
@@ -244,7 +243,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             canComma = 4;
         }
     }
-    // function to add operators in expression and result.
     public void ContinuousOperations(String expressionOperation, String resultOperation){
         if (canComma==3){
             expression = expression + "0";
