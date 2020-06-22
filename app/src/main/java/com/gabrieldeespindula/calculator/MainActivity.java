@@ -315,10 +315,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 if (!lastButtonWasASignal){
                     lastButtonWasASignal = false;
-                    canComma = 0;
                     Expression resultBig = new Expression(result);
                     result = resultBig.eval().toString();
                     expression = result.replace('.', ',');
+                    if (expression.contains(",")){
+                        canComma = 4;
+                    } else {
+                        canComma = 1;
+                    }
                 }
             }
             // setTextDirection is here because operations signal for some reason change text direction.
