@@ -246,56 +246,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             // Division button action.
             if (v.getId()==R.id.button_division){
-                // verifying if last button was a signal to not repeat.
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "÷";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "/";
-                }
+                ContinuousOperations("÷", "/");
             }
             // Multiplication button action.
             if (v.getId()==R.id.button_multiplication){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "×";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "*";
-                }
+                ContinuousOperations("×", "*");
             }
             // Minus button action.
             if (v.getId()==R.id.button_minus){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "-";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "-";
-                }
+                ContinuousOperations("-", "-");
             }
             // Plus button action.
             if (v.getId()==R.id.button_plus){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "+";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "+";
-                }
+                ContinuousOperations("+", "+");
             }
             // Comma button action
             if (v.getId()==R.id.button_comma){
@@ -338,6 +301,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
             // changed and not to stand still.
             scroll.fullScroll(View.FOCUS_RIGHT);
+        }
+    }
+    public void ContinuousOperations(String expressionOperation, String resultOperation){
+        if (canComma==3){
+            expression = expression + "0";
+            result = result + "0";
+        }
+        if (!lastButtonWasASignal){
+            expression = expression + expressionOperation;
+            lastButtonWasASignal = true;
+            canComma = 0;
+            result = result + resultOperation;
         }
     }
 }
