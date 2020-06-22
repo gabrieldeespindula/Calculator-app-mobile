@@ -326,6 +326,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     } catch (Exception e){
                         Toast.makeText(this, "You can't make a division for 0", Toast.LENGTH_SHORT).show();
+                        result = "";
+                        expression = "";
                     }
                 }
             }

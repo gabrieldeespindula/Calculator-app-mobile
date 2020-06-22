@@ -314,6 +314,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
                 }
                 if (!lastButtonWasASignal){
+                    // This try is here to prevent division by zero.
                     try {
                         lastButtonWasASignal = false;
                         Expression resultBig = new Expression(result);
@@ -325,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             canComma = 1;
                         }
                     } catch (Exception e){
-                        Toast.makeText(this, "You can't make a division for 0", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "You can't make a division by 0", Toast.LENGTH_SHORT).show();
                         result = "";
                         expression = "";
                     }
