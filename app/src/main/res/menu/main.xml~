@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <group>
+        <item
+            android:id="@+id/checkable_continuous"
+            android:checkable="true"
+            android:checked="false"
+            android:enabled="true"
+            android:title="Continuous"
+            android:visible="true"
+            app:actionViewClass="android.widget.RadioGroup" />
+        <item
+            android:id="@+id/checkable_single"
+            android:checkable="true"
+            android:checked="true"
+            android:enabled="true"
+            android:title="Single"
+            android:visible="true"
+            app:actionViewClass="android.widget.RadioGroup" />
+    </group>
+</menu>

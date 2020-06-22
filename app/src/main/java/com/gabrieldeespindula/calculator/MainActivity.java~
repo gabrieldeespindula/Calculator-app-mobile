@@ -136,166 +136,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             // 0 button action.
             if (v.getId()==R.id.button_zero){
-                expression = expression + "0";
-                result = result + "0";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("0");
             }
             // 1 button action.
             if (v.getId()==R.id.button_one){
-                expression = expression + "1";
-                result = result + "1";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("1");
             }
             // 2 button action.
             if (v.getId()==R.id.button_two){
-                expression = expression + "2";
-                result = result + "2";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("2");
             }
             // 3 button action.
             if (v.getId()==R.id.button_three){
-                expression = expression + "3";
-                result = result + "3";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("3");
             }
             // 4 button action.
             if (v.getId()==R.id.button_four){
-                expression = expression + "4";
-                result = result + "4";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("4");
             }
             // 5 button action.
             if (v.getId()==R.id.button_five){
-                expression = expression + "5";
-                result = result + "5";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("5");
             }
             // 6 button action.
             if (v.getId()==R.id.button_six){
-                expression = expression + "6";
-                result = result + "6";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("6");
             }
             // 7 button action.
             if (v.getId()==R.id.button_seven){
-                expression = expression + "7";
-                result = result + "7";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("7");
             }
             // 8 button action.
             if (v.getId()==R.id.button_eight){
-                expression = expression + "8";
-                result = result + "8";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("8");
             }
             // 9 button action.
             if (v.getId()==R.id.button_nine){
-                expression = expression + "9";
-                result = result + "9";
-                lastButtonWasASignal = false;
-                if (canComma==0){
-                    canComma = 1;
-                } if (canComma==3){
-                    canComma = 4;
-                }
+                ContinuousNumber("9");
             }
             // Division button action.
             if (v.getId()==R.id.button_division){
-                // verifying if last button was a signal to not repeat.
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "÷";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "/";
-                }
+                ContinuousOperations("÷", "/");
             }
             // Multiplication button action.
             if (v.getId()==R.id.button_multiplication){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "×";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "*";
-                }
+                ContinuousOperations("×", "*");
             }
             // Minus button action.
             if (v.getId()==R.id.button_minus){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "-";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "-";
-                }
+                ContinuousOperations("-", "-");
             }
             // Plus button action.
             if (v.getId()==R.id.button_plus){
-                if (canComma==3){
-                    expression = expression + "0";
-                    result = result + "0";
-                }
-                if (!lastButtonWasASignal){
-                    expression = expression + "+";
-                    lastButtonWasASignal = true;
-                    canComma = 0;
-                    result = result + "+";
-                }
+                ContinuousOperations("+", "+");
             }
             // Comma button action
             if (v.getId()==R.id.button_comma){
@@ -314,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
                 }
                 if (!lastButtonWasASignal){
+                    // This try is here to prevent division by zero.
                     try {
                         lastButtonWasASignal = false;
                         Expression resultBig = new Expression(result);
@@ -325,7 +219,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             canComma = 1;
                         }
                     } catch (Exception e){
-                        Toast.makeText(this, "You can't make a division for 0", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "You can't make a division by 0", Toast.LENGTH_SHORT).show();
                         result = "";
                         expression = "";
                     }
@@ -337,6 +231,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
             // changed and not to stand still.
             scroll.fullScroll(View.FOCUS_RIGHT);
+        }
+    }
+    public void ContinuousNumber(String number){
+        expression = expression + number;
+        result = result + number;
+        lastButtonWasASignal = false;
+        if (canComma==0){
+            canComma = 1;
+        } if (canComma==3){
+            canComma = 4;
+        }
+    }
+    public void ContinuousOperations(String expressionOperation, String resultOperation){
+        if (canComma==3){
+            expression = expression + "0";
+            result = result + "0";
+        }
+        if (!lastButtonWasASignal){
+            expression = expression + expressionOperation;
+            lastButtonWasASignal = true;
+            canComma = 0;
+            result = result + resultOperation;
         }
     }
 }
