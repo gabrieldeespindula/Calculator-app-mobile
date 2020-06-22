@@ -318,7 +318,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     canComma = 0;
                     Expression resultBig = new Expression(result);
                     result = resultBig.eval().toString();
-                    expression = result;
+                    expression = result.replace('.', ',');
                 }
             }
             // setTextDirection is here because operations signal for some reason change text direction.
