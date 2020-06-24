@@ -230,15 +230,66 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
             }
-            // setTextDirection is here because operations signal for some reason change text direction.
-            textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
-            textNumber.setText(expression);
-            // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
-            // changed and not to stand still.
-            scroll.fullScroll(View.FOCUS_RIGHT);
         }
+        if (!continuous && single){
+            // C button action.
+            if (v.getId()==R.id.button_clear){
+                expression = "";
+                lastButtonWasASignal = true;
+                canMinus = true;
+                canComma = 0;
+                result = "";
+            }
+            // 0 button action.
+            if (v.getId()==R.id.button_zero){
+                ContinuousNumber("0");
+            }
+            // 1 button action.
+            if (v.getId()==R.id.button_one){
+                ContinuousNumber("1");
+            }
+            // 2 button action.
+            if (v.getId()==R.id.button_two){
+                ContinuousNumber("2");
+            }
+            // 3 button action.
+            if (v.getId()==R.id.button_three){
+                ContinuousNumber("3");
+            }
+            // 4 button action.
+            if (v.getId()==R.id.button_four){
+                ContinuousNumber("4");
+            }
+            // 5 button action.
+            if (v.getId()==R.id.button_five){
+                ContinuousNumber("5");
+            }
+            // 6 button action.
+            if (v.getId()==R.id.button_six){
+                ContinuousNumber("6");
+            }
+            // 7 button action.
+            if (v.getId()==R.id.button_seven){
+                ContinuousNumber("7");
+            }
+            // 8 button action.
+            if (v.getId()==R.id.button_eight){
+                ContinuousNumber("8");
+            }
+            // 9 button action.
+            if (v.getId()==R.id.button_nine){
+                ContinuousNumber("9");
+            }
+        }
+        // setTextDirection is here because operations signal for some reason change text direction.
+        textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
+        textNumber.setText(expression);
+        // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
+        // changed and not to stand still.
+        scroll.fullScroll(View.FOCUS_RIGHT);
     }
     // function to add number in expression and result.
+    // It's for Continuous and Single mode.
     public void ContinuousNumber(String number){
         expression = expression + number;
         result = result + number;
