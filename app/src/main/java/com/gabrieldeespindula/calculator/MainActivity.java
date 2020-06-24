@@ -210,32 +210,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 // Equals button actions.
                 if (v.getId() == R.id.button_equals) {
-                    if (canComma == 3) {
-                        expression = expression + "0";
-                    }
-                    if (lastButtonWasASignal) {
-                        Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
-                    }
-                    if (!lastButtonWasASignal) {
-                        // This try is here to prevent division by zero.
-                        try {
-                            lastButtonWasASignal = false;
-                            canMinus = true;
-                            Expression resultBig = new Expression(result);
-                            result = resultBig.eval().toString();
-                            expression = result.replace('.', ',');
-                            if (expression.contains(",")) {
-                                canComma = 4;
-                            } else {
-                                canComma = 1;
-                            }
-                        } catch (Exception e) {
-                            Toast.makeText(this, "You can't make a division by 0", Toast.LENGTH_SHORT).show();
-                            result = "";
-                            expression = "";
-                            canComma = 0;
-                        }
-                    }
+                    EqualsButton();
                 }
             }
             if (!continuous && single) {
@@ -255,6 +230,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (v.getId() == R.id.button_plus) {
                     SingleOperations("+", "+");
                 }
+                // Equals button actions.
+                if (v.getId() == R.id.button_equals) {
+                    EqualsButton();
+                    howManyOperations = 0;
+                }
             }
             // setTextDirection is here because operations signal for some reason change text direction.
             textNumber.setTextDirection(View.TEXT_DIRECTION_LTR);
@@ -262,6 +242,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // fullScroll serves for the HorizontalScrollView to track where the textNumber is being
             // changed and not to stand still.
             scroll.fullScroll(View.FOCUS_RIGHT);
+        }
+    }
+    public void EqualsButton(){
+        if (canComma == 3) {
+            expression = expression + "0";
+        }
+        if (lastButtonWasASignal) {
+            Toast.makeText(this, "The expression can't end with a signal!", Toast.LENGTH_SHORT).show();
+        }
+        if (!lastButtonWasASignal) {
+            // This try is here to prevent division by zero.
+            try {
+                lastButtonWasASignal = false;
+                canMinus = true;
+                Expression resultBig = new Expression(result);
+                result = resultBig.eval().toString();
+                expression = result.replace('.', ',');
+                if (expression.contains(",")) {
+                    canComma = 4;
+                } else {
+                    canComma = 1;
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "You can't make a division by 0", Toast.LENGTH_SHORT).show();
+                result = "";
+                expression = "";
+                canComma = 0;
+            }
         }
     }
     public void SingleOperations(String operation, String text){
