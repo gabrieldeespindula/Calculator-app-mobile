@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     int canComma = 0;
     // result is what will be used to make the operations.
     String result = "";
+    // if true, yes. If false, no you can't.
+    Boolean canMinus = true;
+
 
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -131,6 +134,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (v.getId()==R.id.button_clear){
                 expression = "";
                 lastButtonWasASignal = true;
+                canMinus = true;
                 canComma = 0;
                 result = "";
             }
@@ -210,6 +214,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // This try is here to prevent division by zero.
                     try {
                         lastButtonWasASignal = false;
+                        canMinus = true;
                         Expression resultBig = new Expression(result);
                         result = resultBig.eval().toString();
                         expression = result.replace('.', ',');
@@ -238,6 +243,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         expression = expression + number;
         result = result + number;
         lastButtonWasASignal = false;
+        canMinus = true;
         if (canComma==0){
             canComma = 1;
         } if (canComma==3){
@@ -246,15 +252,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     // function to add operators in expression and result.
     public void ContinuousOperations(String expressionOperation, String resultOperation){
-        if (canComma==3){
-            expression = expression + "0";
-            result = result + "0";
-        }
-        if (!lastButtonWasASignal){
+        if (expressionOperation.equals("-")){
+            if (canMinus){
+                expression = expression + expressionOperation;
+                lastButtonWasASignal = true;
+                canComma = 0;
+                result = result + resultOperation;
+                canMinus = false;
+            }
+
+        } else if (!lastButtonWasASignal){
             expression = expression + expressionOperation;
             lastButtonWasASignal = true;
             canComma = 0;
             result = result + resultOperation;
+            canMinus = true;
+        }
+        if (canComma==3){
+            expression = expression + "0";
+            result = result + "0";
         }
     }
 }
