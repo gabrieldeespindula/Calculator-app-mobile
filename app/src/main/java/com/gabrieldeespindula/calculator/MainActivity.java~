@@ -178,14 +178,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (v.getId() == R.id.button_nine) {
                 ContinuousNumber("9");
             }
-            // Comma button action
-            if (v.getId() == R.id.button_comma) {
-                if (canComma == 1) {
-                    expression = expression + ",";
-                    result = result + ".";
-                    canComma = 3;
-                }
-            }
             if (continuous && !single) {
                 // Division button action.
                 if (v.getId() == R.id.button_division) {
@@ -203,6 +195,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (v.getId() == R.id.button_plus) {
                     ContinuousOperations("+", "+");
                 }
+                // Comma button action
+                if (v.getId() == R.id.button_comma) {
+                    if (canComma == 1) {
+                        expression = expression + ",";
+                        result = result + ".";
+                        canComma = 3;
+                    }
                 }
                 // Equals button actions.
                 if (v.getId() == R.id.button_equals) {
