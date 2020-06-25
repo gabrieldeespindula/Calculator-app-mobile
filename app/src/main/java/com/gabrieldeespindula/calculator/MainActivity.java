@@ -233,7 +233,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Equals button actions.
                 if (v.getId() == R.id.button_equals) {
                     EqualsButton();
-                    howManyOperations = 0;
                 }
             }
             // setTextDirection is here because operations signal for some reason change text direction.
@@ -264,6 +263,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 } else {
                     canComma = 1;
                 }
+                howManyOperations = 0;
             } catch (Exception e) {
                 Toast.makeText(this, "You can't make a division by 0", Toast.LENGTH_SHORT).show();
                 result = "";
