@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Equals button actions.
                 if (v.getId() == R.id.button_equals) {
                     EqualsButton();
+                    howManyOperations = 0;
                 }
             }
             // setTextDirection is here because operations signal for some reason change text direction.

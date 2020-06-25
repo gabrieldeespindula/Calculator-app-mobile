@@ -269,6 +269,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 result = "";
                 expression = "";
                 canComma = 0;
+                lastButtonWasASignal = true;
             }
         }
     }
